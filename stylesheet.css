@@ -193,6 +193,14 @@ p {
         height: 0px;
     }
     
-    .text-content {
+    .container.text {
+        height: 73vh;
+        margin: auto;
         grid-area: text;
+        overflow: hidden;
+    }
+    
+    .text-content {
+        height: 73vh;
+        overflow: auto;
     }
