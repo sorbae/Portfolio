@@ -55,7 +55,7 @@ p {
     -webkit-filter: invert(1);
     filter: invert(1);
     margin-left: -25px;
-    max-width: 23%;
+    max-width: 22%;
 }
 
 .nav-button-quests {
@@ -141,20 +141,23 @@ p {
     body {
         background: linear-gradient(to right, #000 0%, #000 60%, #fff 60%, #fff 100%);
     }
-
-    .nav-bar {
-        float: right;
-        width: 40%;
-        background: none;
+    
+    .wide-screen {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            "background navbar"
+            "background text";
     }
     
-    .nav-button-lore {
-        width:40px;
-        filter: none;
+    .container.nav-box {
+        grid-area: navbar;
+        position: relative;
+        background: none;
     }
 
-    .nav-button-stats, .nav-button-quests {
-        width: 30px;
+    .nav-button-lore, .nav-button-stats, .nav-button-quests {
         filter: none;
     }
 	
@@ -171,7 +174,25 @@ p {
     }
     
     .divider {
-        width: 40%;
+        width: 70%;
         background: black;
         background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(50%, black));
+    }
+    
+    .container.background {
+        margin: 0 auto;
+        grid-area: background;
+    }
+    
+    .hpexp-bar {
+        position: relative;
+        bottom: 10%;
+    }
+    
+    .empty-space {
+        height: 0px;
+    }
+    
+    .text-content {
+        grid-area: text;
     }
